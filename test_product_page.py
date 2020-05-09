@@ -1,8 +1,8 @@
+import time
 import pytest
 from pages.product_page import ProductPage
 from pages.cart_page import CartPage
 from pages.login_page import LoginPage
-import time
 
 
 class TestUserAddToCartFromProductPage(object):
@@ -40,12 +40,12 @@ class TestUserAddToCartFromProductPage(object):
 
 @pytest.mark.need_review
 def test_guest_can_add_product_to_cart(browser):
-        link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
-        page = ProductPage(browser, link)
-        page.open()
-        page.should_be_add_to_cart_link()
-        page.add_product_to_cart()
-        page.check_info(link)
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_be_add_to_cart_link()
+    page.add_product_to_cart()
+    page.check_info(link)
 
 
 @pytest.mark.other
