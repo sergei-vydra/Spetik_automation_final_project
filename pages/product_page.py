@@ -5,11 +5,11 @@ from .locators import BasePageLocators
 
 class ProductPage(BasePage):
 
-    def should_be_add_to_cart_link(self):
-        assert self.is_element_present(*ProductPageLocators.ADD_TO_CART_BTN), "Add to cart button is not presented"
+    def should_be_add_to_basket_link(self):
+        assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BTN), "Add to basket button is not presented"
 
-    def add_product_to_cart(self):
-        self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BTN).click()
+    def add_product_to_basket(self):
+        self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BTN).click()
 
     def get_product_name(self):
         return self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
@@ -19,7 +19,7 @@ class ProductPage(BasePage):
 
     def check_info(self, link):
         name_in_basket = self.browser.find_elements(*ProductPageLocators.ALERT_PRODUCT_NAME)[0].text
-        price_in_basket = self.browser.find_elements(*ProductPageLocators.ALERT_PRICE_IN_CART)[2].text
+        price_in_basket = self.browser.find_elements(*ProductPageLocators.ALERT_PRICE_IN_BASKET)[2].text
         try:
             assert self.get_product_name() == name_in_basket
             assert self.get_product_price() == price_in_basket

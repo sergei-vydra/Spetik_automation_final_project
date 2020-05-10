@@ -4,13 +4,13 @@ from selenium.webdriver.common.by import By
 class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     REGISTRATION_LINK = (By.CSS_SELECTOR, "#registration_link")
-    SHOW_CART_LINK = (By.CSS_SELECTOR, ".basket-mini .btn-group>a")
+    SHOW_BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini .btn-group>a")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
-class CartPageLocators(object):
-    CART_ITEM = (By.CSS_SELECTOR, ".basket-items")
-    EMPTY_CART_TEXT = (By.CSS_SELECTOR, ".content p")
+class BasketPageLocators(object):
+    BASKET_ITEM = (By.CSS_SELECTOR, ".basket-items")
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, ".content p")
 
 
 class LoginPageLocators(object):
@@ -24,9 +24,9 @@ class LoginPageLocators(object):
 
 
 class ProductPageLocators(object):
-    ADD_TO_CART_BTN = (By.CSS_SELECTOR, '.btn-add-to-basket')
+    ADD_TO_BASKET_BTN = (By.CSS_SELECTOR, '.btn-add-to-basket')
     PRODUCT_NAME = (By.CSS_SELECTOR, '.product_main>h1')
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
-    ALERT_PRICE_IN_CART = (By.CSS_SELECTOR, '#messages .alert .alertinner strong')
+    ALERT_PRICE_IN_BASKET = (By.CSS_SELECTOR, '#messages .alert .alertinner strong')
     ALERT_PRODUCT_NAME = (By.CSS_SELECTOR, '#messages .alert .alertinner strong')
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, '#messages .alert .alertinner')
